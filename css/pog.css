@@ -366,8 +366,8 @@ body.dark-mode .reveal img {
     top: 20px;
     right: 80px;
     z-index: 1000;
-    background: none;
-    border: 2px solid currentColor;
+    background: rgba(255, 255, 255, 0.9);
+    border: 2px solid #333;
     border-radius: 50%;
     width: 50px;
     height: 50px;
@@ -385,8 +385,8 @@ body.dark-mode .reveal img {
     top: 20px;
     right: 20px;
     z-index: 1000;
-    background: none;
-    border: 2px solid currentColor;
+    background: rgba(255, 255, 255, 0.9);
+    border: 2px solid #333;
     border-radius: 50%;
     width: 50px;
     height: 50px;
@@ -450,6 +450,7 @@ body.dark-mode .reveal img {
     box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
     min-width: 35px;
     text-align: center;
+    color: #333;
 }
 
 .help-item span {
@@ -459,6 +460,8 @@ body.dark-mode .reveal img {
 body.dark-mode .theme-toggle,
 body.dark-mode .help-toggle {
     color: #f0f0f0;
+    background: rgba(26, 26, 26, 0.9);
+    border-color: #f0f0f0;
 }
 
 body.dark-mode .help-menu {
