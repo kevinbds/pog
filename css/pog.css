@@ -408,7 +408,7 @@ body.dark-mode .reveal img {
     height: 100vh;
     background: rgba(255, 255, 255, 0.95);
     box-shadow: -2px 0 10px rgba(0, 0, 0, 0.2);
-    z-index: 999;
+    z-index: 1001;
     padding: 80px 20px 20px 20px;
     overflow-y: auto;
     transition: right 0.3s ease;
@@ -424,6 +424,35 @@ body.dark-mode .reveal img {
     color: #333;
     border-bottom: 2px solid #6D563E;
     padding-bottom: 10px;
+}
+
+.help-close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: none;
+    border: 2px solid currentColor;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    font-size: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    color: #333;
+    line-height: 1;
+    z-index: 1002;
+}
+
+.help-close:hover {
+    transform: rotate(90deg) scale(1.1);
+    box-shadow: 0 0 10px currentColor;
+}
+
+.help-close:active {
+    transform: rotate(90deg) scale(0.95);
 }
 
 .help-content {
@@ -471,6 +500,10 @@ body.dark-mode .help-menu {
 body.dark-mode .help-menu h3 {
     color: #f0f0f0;
     border-bottom-color: #6ab0ff;
+}
+
+body.dark-mode .help-close {
+    color: #f0f0f0;
 }
 
 body.dark-mode .help-item {
@@ -532,6 +565,52 @@ body:-moz-full-screen .help-toggle,
 body:-ms-fullscreen .theme-toggle,
 body:-ms-fullscreen .help-toggle {
     display: none !important;
+}
+
+@media (max-width: 768px) {
+    .help-menu {
+        width: 100%;
+        right: -100%;
+        padding: 70px 15px 15px 15px;
+    }
+
+    .help-menu h3 {
+        font-size: 1.1em;
+    }
+
+    .help-close {
+        top: 15px;
+        right: 15px;
+        width: 35px;
+        height: 35px;
+        font-size: 24px;
+    }
+
+    .help-item {
+        font-size: 0.85em;
+    }
+
+    .help-item kbd {
+        font-size: 0.85em;
+        padding: 2px 6px;
+        min-width: 30px;
+    }
+
+    .theme-toggle {
+        top: 15px;
+        right: 70px;
+        width: 45px;
+        height: 45px;
+        font-size: 20px;
+    }
+
+    .help-toggle {
+        top: 15px;
+        right: 15px;
+        width: 45px;
+        height: 45px;
+        font-size: 20px;
+    }
 }
 
 @media print {

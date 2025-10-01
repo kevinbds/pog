@@ -31,14 +31,17 @@
         </nav>
 
         <aside class="help-menu" id="helpMenu" role="dialog" aria-labelledby="help-title" aria-hidden="true">
-            <h3>Atalhos de Navegação</h3>
+            <h3 id="help-title">Atalhos de Navegação</h3>
+            <button class="help-close" id="helpClose" aria-label="Fechar menu de ajuda">
+                <span aria-hidden="true">×</span>
+            </button>
             <div class="help-content">
                 <div class="help-item">
-                    <kbd>→</kbd> <kbd>Space</kbd>
+                    <kbd aria-label="Seta direita">→</kbd> <kbd>Space</kbd>
                     <span>Próximo slide</span>
                 </div>
                 <div class="help-item">
-                    <kbd>←</kbd>
+                    <kbd aria-label="Seta esquerda">←</kbd>
                     <span>Slide anterior</span>
                 </div>
                 <div class="help-item">
@@ -58,7 +61,7 @@
                     <span>Tela cheia (Navegador)</span>
                 </div>
                 <div class="help-item">
-                    <kbd>ESC</kbd>
+                    <kbd aria-label="Escape">ESC</kbd>
                     <span>Sair da tela cheia</span>
                 </div>
                 <div class="help-item">
@@ -70,7 +73,7 @@
                     <span>Alternar tema claro/escuro</span>
                 </div>
                 <div class="help-item">
-                    <kbd>?</kbd>
+                    <kbd aria-label="Ponto de interrogação">?</kbd>
                     <span>Abrir/fechar este menu</span>
                 </div>
             </div>

@@ -1,32 +1,53 @@
 (function() {
     const helpToggle = document.getElementById('helpToggle');
+    const helpClose = document.getElementById('helpClose');
     const helpMenu = document.getElementById('helpMenu');
 
+    function openHelpMenu() {
+        helpMenu.classList.add('open');
+        helpToggle.setAttribute('aria-expanded', 'true');
+        helpMenu.setAttribute('aria-hidden', 'false');
+        helpClose.focus();
+    }
+
+    function closeHelpMenu() {
+        helpMenu.classList.remove('open');
+        helpToggle.setAttribute('aria-expanded', 'false');
+        helpMenu.setAttribute('aria-hidden', 'true');
+        helpToggle.focus();
+    }
+
     helpToggle.addEventListener('click', function() {
-        const isOpen = helpMenu.classList.toggle('open');
-        helpToggle.setAttribute('aria-expanded', isOpen);
-        helpMenu.setAttribute('aria-hidden', !isOpen);
+        if (helpMenu.classList.contains('open')) {
+            closeHelpMenu();
+        } else {
+            openHelpMenu();
+        }
+    });
+
+    helpClose.addEventListener('click', function() {
+        closeHelpMenu();
     });
 
     document.addEventListener('click', function(e) {
         if (!helpMenu.contains(e.target) && !helpToggle.contains(e.target)) {
-            helpMenu.classList.remove('open');
-            helpToggle.setAttribute('aria-expanded', 'false');
-            helpMenu.setAttribute('aria-hidden', 'true');
+            if (helpMenu.classList.contains('open')) {
+                closeHelpMenu();
+            }
         }
     });
 
     document.addEventListener('keydown', function(e) {
         if (e.key === '?' && !e.shiftKey) {
-            const isOpen = helpMenu.classList.toggle('open');
-            helpToggle.setAttribute('aria-expanded', isOpen);
-            helpMenu.setAttribute('aria-hidden', !isOpen);
+            if (helpMenu.classList.contains('open')) {
+                closeHelpMenu();
+            } else {
+                openHelpMenu();
+            }
             e.preventDefault();
         }
         if (e.key === 'Escape' && helpMenu.classList.contains('open')) {
-            helpMenu.classList.remove('open');
-            helpToggle.setAttribute('aria-expanded', 'false');
-            helpMenu.setAttribute('aria-hidden', 'true');
+            closeHelpMenu();
             e.stopPropagation();
             e.preventDefault();
             return false;
@@ -97,17 +118,23 @@ document.addEventListener('keydown', function(e) {
     function applyTheme(theme) {
         body.setAttribute('data-theme', theme);
 
+        let themeLabel = '';
         if (theme === 'auto') {
+            themeLabel = 'automático';
             if (systemPrefersDark.matches) {
                 body.classList.add('dark-mode');
             } else {
                 body.classList.remove('dark-mode');
             }
         } else if (theme === 'dark') {
+            themeLabel = 'escuro';
             body.classList.add('dark-mode');
         } else {
+            themeLabel = 'claro';
             body.classList.remove('dark-mode');
         }
+
+        themeToggle.setAttribute('aria-label', `Alternar tema (atual: ${themeLabel}). Pressione D para alternar`);
     }
 
     applyTheme(currentTheme);
