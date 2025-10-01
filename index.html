@@ -10,12 +10,9 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
         <link rel="stylesheet" href="css/reveal.min.css">
         <link rel="stylesheet" href="css/theme/solarized.css" id="theme">
-        <!-- For syntax highlighting -->
         <link rel="stylesheet" href="lib/css/zenburn.css">
-        <!-- Bootstrap -->
         <link rel="stylesheet" href="css/bootstrap.min.css">
         <link rel="stylesheet" href="css/bootstrap-theme.min.css">
-        <!-- If the query includes 'print-pdf', include the PDF print sheet -->
         <script>
                 if( window.location.search.match( /print-pdf/gi ) ) {
                 var link = document.createElement( 'link' );
@@ -29,10 +26,160 @@
         <script src="lib/js/html5shiv.js"></script>
         <![endif]-->
         <link rel="stylesheet" href="css/pog.css">
+        
+        <style>
+            /* Estilos para o modo dark */
+            body {
+                transition: background-color 0.3s ease, color 0.3s ease;
+            }
+
+            body.dark-mode {
+                background-color: #1a1a1a;
+                color: #e0e0e0;
+            }
+
+            body.dark-mode .reveal {
+                background-color: #1a1a1a;
+            }
+
+            body.dark-mode .reveal .slides {
+                color: #e0e0e0;
+            }
+
+            body.dark-mode .reveal h1,
+            body.dark-mode .reveal h2,
+            body.dark-mode .reveal h3,
+            body.dark-mode .reveal h4 {
+                color: #f0f0f0;
+            }
+
+            body.dark-mode .reveal blockquote {
+                background: #2a2a2a;
+                border-left: 5px solid #4a9eff;
+                color: #d0d0d0;
+            }
+
+            body.dark-mode .reveal blockquote cite {
+                color: #a0a0a0;
+            }
+
+            body.dark-mode .reveal pre {
+                background: #2a2a2a;
+                border: 1px solid #3a3a3a;
+            }
+
+            body.dark-mode .reveal code {
+                background: #2a2a2a;
+                color: #4a9eff;
+            }
+
+            body.dark-mode .color4-darker {
+                color: #6ab0ff !important;
+            }
+
+            body.dark-mode .color5-darker {
+                color: #ff6b6b !important;
+            }
+
+            /* Botão de toggle do tema */
+            .theme-toggle {
+                position: fixed;
+                top: 20px;
+                right: 20px;
+                z-index: 1000;
+                background: none;
+                border: 2px solid currentColor;
+                border-radius: 50%;
+                width: 50px;
+                height: 50px;
+                cursor: pointer;
+                font-size: 24px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                transition: all 0.3s ease;
+                color: #333;
+            }
+
+            body.dark-mode .theme-toggle {
+                color: #f0f0f0;
+            }
+
+            .theme-toggle:hover {
+                transform: rotate(20deg) scale(1.1);
+                box-shadow: 0 0 15px currentColor;
+            }
+
+            .theme-toggle:active {
+                transform: rotate(20deg) scale(0.95);
+            }
+
+            /* Ícones dos temas */
+            .theme-toggle .auto-icon,
+            .theme-toggle .sun-icon,
+            .theme-toggle .moon-icon {
+                transition: opacity 0.3s ease;
+                display: none;
+            }
+
+            body[data-theme="auto"] .theme-toggle .auto-icon {
+                display: block;
+            }
+
+            body[data-theme="light"] .theme-toggle .sun-icon {
+                display: block;
+            }
+
+            body[data-theme="dark"] .theme-toggle .moon-icon {
+                display: block;
+            }
+
+            /* Ajustes para imagens no modo dark */
+            body.dark-mode .reveal img {
+                filter: brightness(0.9);
+            }
+
+            /* Correção para imagens que saem da tela */
+            .reveal img {
+                max-width: 100%;
+                max-height: 70vh;
+                height: auto;
+                object-fit: contain;
+            }
+
+            .reveal .img-center {
+                display: block;
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            .reveal .img-50 {
+                max-width: 50%;
+            }
+
+            .reveal .img-70 {
+                max-width: 70%;
+            }
+
+            /* Garantir que seções com imagens grandes não ultrapassem os limites */
+            .reveal section {
+                height: 100%;
+            }
+
+            .reveal section img {
+                max-height: 60vh;
+            }
+        </style>
     </head>
     <body>
+        <!-- Botão de toggle do tema -->
+        <button class="theme-toggle" id="themeToggle" aria-label="Alternar tema">
+            <span class="auto-icon">💻</span>
+            <span class="sun-icon">☀️</span>
+            <span class="moon-icon">🌙</span>
+        </button>
+
         <div class="reveal">
-            <!-- Any section element inside of this container is displayed as a slide -->
             <div class="slides">
                 <section>
                     <h1>A arte da Programação Orientada à Gambiarra</h1>
@@ -119,7 +266,7 @@
                     </ul>
                      <blockquote>
                         <p>Eu fiz somente o que foi especificado!</p>
-                        <cite>Analista, especialista no processo Go Horse </cite>
+                        <cite>Analista, especialista no processo Go Horse </cite>
                     </blockquote>
                 </section>
 
@@ -190,8 +337,8 @@
                         <dd>1337 h4x0r5 dud3 lol</dd>
                     </dl>
                     <blockquote>
-                        <p>Reza e cruza os dedos que vai funcionar! </p>
-                        <cite>POG Pai de Santo falando para um POGramador menos experimente... </cite>
+                        <p>Reza e cruza os dedos que vai funcionar! </p>
+                        <cite>POG Pai de Santo falando para um POGramador menos experimente... </cite>
                     </blockquote>
                 </section>
 
@@ -330,7 +477,7 @@
                     </div>
                     <blockquote>
                         <p>Não me interessa se é restrição da ferramenta, dá um jeito e coloca isso funcionando até amanhã!</p>
-                        <cite>Gerente de Projeto mostrando como se lidera a equipe a criar uma POG </cite>
+                        <cite>Gerente de Projeto mostrando como se lidera a equipe a criar uma POG </cite>
                     </blockquote>
                 </section>
 
@@ -358,7 +505,7 @@
                 </section>
 
                 <section>
-                    <h2>RCP Pattern ( Reuse by Copy-and-Paste )</h2>
+                    <h2>RCP Pattern ( Reuse by Copy-and-Paste )</h2>
                     <ul class="color4-darker">
                         <li>Copie o máximo de código que puder: Princípio da Reflexão Reprodutória</li>
                         <li>A baixa adaptabilidade e difícil manutenção tornam o programa mais estável</li>
@@ -448,11 +595,11 @@ if (valor != "123") {
 teste1, temp2, a, b, x
 jaTrocouDeAba, botaoClicado, foiAtualizado, passouPorAqui
 numeroMagico, naoAchou, temErro
-anterior5, atual5, anteriorDoAnterior5 
+anterior5, atual5, anteriorDoAnterior5 
                     </code></pre>
                     <blockquote>
                         <p>É só reiniciar que funciona!</p>
-                        <cite>POGgramador logo de manhã com copo de café na mão</cite>
+                        <cite>POGramador logo de manhã com copo de café na mão</cite>
                     </blockquote>
                 </section>
 
@@ -466,8 +613,8 @@ anterior5, atual5, anteriorDoAnterior5 
                         <li>Se alguém mexer, para tudo</li>
                     </ul>
                     <blockquote>
-                        <p>Bom, deixa estourar a bomba lá, aí quando vierem me pentelhar aqui eu vejo o que faço... </p>
-                        <cite>POGgramador para outro POGgramador, só esperando o problema voltar </cite>
+                        <p>Bom, deixa estourar a bomba lá, aí quando vierem me pentelhar aqui eu vejo o que faço... </p>
+                        <cite>POGramador para outro POGramador, só esperando o problema voltar </cite>
                     </blockquote>
                 </section>
 
@@ -485,11 +632,11 @@ if (number.equals("1")) {
     return 3;
 } else if (number.equals("4")) {
     return 4;
-} else if (number.equals(“5")) {
+} else if (number.equals("5")) {
     return 5;
 } else if (...) {
     ...
-}else if (number.equals(“10000000")) {
+}else if (number.equals("10000000")) {
     return 10000000;
 }
                     </code></pre>
@@ -529,7 +676,7 @@ try {
 }
                     </code></pre>
                     <blockquote>
-                        <p> ...ah!!! Isto é um erro comum do Windows!</p>
+                        <p> ...ah!!! Isto é um erro comum do Windows!</p>
                         <cite>POGramador tentando ganhar tempo para corrigir seu código</cite>
                     </blockquote>
                 </section>
@@ -580,7 +727,7 @@ public Tabela montaTabela(String linguicao){
 }
                     </code></pre>
                     <blockquote>
-                        <p>Quando eu testei, funcionou! </p>
+                        <p>Quando eu testei, funcionou! </p>
                         <cite>POGramador demonstrando as gambiarras para seu Gerente Sem Noçao</cite>
                     </blockquote>
                 </section>
@@ -670,7 +817,7 @@ public static Object[] processar(Map parametros) throws Throwable {
 }
                     </code></pre>
                     <blockquote>
-                        <p>Internet Explorer 7 ? Atualiza pro 8 que funciona</p>
+                        <p>Internet Explorer 7 ? Atualiza pro 8 que funciona</p>
                         <cite>POGramador com esperança de que o sistema ainda irá funcionar</cite>
                     </blockquote>
                 </section>
@@ -679,12 +826,12 @@ public static Object[] processar(Map parametros) throws Throwable {
                     <h2>Controller Confusion</h2>
                     <ul class="color4-darker">
                         <li>Elimine o M do padrão MVC e coloque tudo no Controler</li>
-                        <li>Padrão VCC – “View/Controller Confusion”</li>
+                        <li>Padrão VCC – "View/Controller Confusion"</li>
                         <li>Os POGramadores mais avançados são capazes de ignorar o V e ficar apenas com o CCC –Chaotic Controller Confusion</li>
                     </ul>
                     <blockquote>
-                        <p>Não se preocupe, nenhum sistema "entra redondo". O importante agora é entrar em produção, depois consertamos os erros! </p>
-                        <cite>Gerente sem noção tentando acalmar desenvolvedor sobre projeto MOG com prazo estourado. </cite>
+                        <p>Não se preocupe, nenhum sistema "entra redondo". O importante agora é entrar em produção, depois consertamos os erros! </p>
+                        <cite>Gerente sem noção tentando acalmar desenvolvedor sobre projeto MOG com prazo estourado. </cite>
                     </blockquote>
                 </section>
 
@@ -721,7 +868,7 @@ public static Object[] processar(Map parametros) throws Throwable {
                         </li>
                     </ul>
                     <blockquote>
-                        <p>É só um botão, o que pode dar errado?</p>
+                        <p>É só um botão, o que pode dar errado?</p>
                         <cite>Gerente sem-noção sobre nova funcionalidade</cite>
                     </blockquote>
                 </section>
@@ -771,5 +918,72 @@ public static Object[] processar(Map parametros) throws Throwable {
         <script src="lib/js/head.min.js"></script>
         <script src="js/reveal.min.js"></script>
         <script src="js/pog.js"></script>
+        
+        <script>
+            // Script para controlar o dark mode
+            (function() {
+                const themeToggle = document.getElementById('themeToggle');
+                const body = document.body;
+                
+                // Detecta a preferência do sistema
+                const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)');
+                
+                // Verifica se há preferência salva, senão usa 'auto' como padrão
+                let currentTheme = localStorage.getItem('theme') || 'auto';
+                
+                // Função para aplicar o tema
+                function applyTheme(theme) {
+                    body.setAttribute('data-theme', theme);
+                    
+                    if (theme === 'auto') {
+                        // Usa a preferência do sistema
+                        if (systemPrefersDark.matches) {
+                            body.classList.add('dark-mode');
+                        } else {
+                            body.classList.remove('dark-mode');
+                        }
+                    } else if (theme === 'dark') {
+                        body.classList.add('dark-mode');
+                    } else {
+                        body.classList.remove('dark-mode');
+                    }
+                }
+                
+                // Aplica o tema inicial
+                applyTheme(currentTheme);
+                
+                // Toggle entre os três modos: auto -> light -> dark -> auto
+                themeToggle.addEventListener('click', function() {
+                    if (currentTheme === 'auto') {
+                        currentTheme = 'light';
+                    } else if (currentTheme === 'light') {
+                        currentTheme = 'dark';
+                    } else {
+                        currentTheme = 'auto';
+                    }
+                    
+                    localStorage.setItem('theme', currentTheme);
+                    applyTheme(currentTheme);
+                });
+                
+                // Escuta mudanças na preferência do sistema (apenas quando está em modo auto)
+                systemPrefersDark.addEventListener('change', function(e) {
+                    if (currentTheme === 'auto') {
+                        if (e.matches) {
+                            body.classList.add('dark-mode');
+                        } else {
+                            body.classList.remove('dark-mode');
+                        }
+                    }
+                });
+                
+                // Atalho de teclado: pressione 'd' para alternar o tema
+                document.addEventListener('keydown', function(e) {
+                    if (e.key === 'd' || e.key === 'D') {
+                        themeToggle.click();
+                    }
+                });
+            })();
+        </script>
     </body>
 </html>
