@@ -31,50 +31,77 @@
         </nav>
 
         <aside class="help-menu" id="helpMenu" role="dialog" aria-labelledby="help-title" aria-hidden="true">
-            <h3 id="help-title">Atalhos de Navegação</h3>
+            <h3 id="help-title">Navegação</h3>
             <button class="help-close" id="helpClose" aria-label="Fechar menu de ajuda">
                 <span aria-hidden="true">×</span>
             </button>
-            <div class="help-content">
-                <div class="help-item">
-                    <kbd aria-label="Seta direita">→</kbd> <kbd>Space</kbd>
-                    <span>Próximo slide</span>
+            <div class="help-content" id="helpContent">
+                <!-- Conteúdo para desktop (teclado) -->
+                <div class="help-keyboard">
+                    <div class="help-item">
+                        <kbd aria-label="Seta direita">→</kbd> <kbd>Space</kbd>
+                        <span>Próximo slide</span>
+                    </div>
+                    <div class="help-item">
+                        <kbd aria-label="Seta esquerda">←</kbd>
+                        <span>Slide anterior</span>
+                    </div>
+                    <div class="help-item">
+                        <kbd>Home</kbd>
+                        <span>Primeiro slide</span>
+                    </div>
+                    <div class="help-item">
+                        <kbd>End</kbd>
+                        <span>Último slide</span>
+                    </div>
+                    <div class="help-item">
+                        <kbd>F</kbd>
+                        <span>Tela cheia (Reveal)</span>
+                    </div>
+                    <div class="help-item">
+                        <kbd>F11</kbd>
+                        <span>Tela cheia (Navegador)</span>
+                    </div>
+                    <div class="help-item">
+                        <kbd aria-label="Escape">ESC</kbd>
+                        <span>Sair da tela cheia</span>
+                    </div>
+                    <div class="help-item">
+                        <kbd>O</kbd>
+                        <span>Visão geral dos slides</span>
+                    </div>
+                    <div class="help-item">
+                        <kbd>D</kbd>
+                        <span>Alternar tema claro/escuro</span>
+                    </div>
+                    <div class="help-item">
+                        <kbd aria-label="Ponto de interrogação">?</kbd>
+                        <span>Abrir/fechar este menu</span>
+                    </div>
                 </div>
-                <div class="help-item">
-                    <kbd aria-label="Seta esquerda">←</kbd>
-                    <span>Slide anterior</span>
-                </div>
-                <div class="help-item">
-                    <kbd>Home</kbd>
-                    <span>Primeiro slide</span>
-                </div>
-                <div class="help-item">
-                    <kbd>End</kbd>
-                    <span>Último slide</span>
-                </div>
-                <div class="help-item">
-                    <kbd>F</kbd>
-                    <span>Tela cheia (Reveal)</span>
-                </div>
-                <div class="help-item">
-                    <kbd>F11</kbd>
-                    <span>Tela cheia (Navegador)</span>
-                </div>
-                <div class="help-item">
-                    <kbd aria-label="Escape">ESC</kbd>
-                    <span>Sair da tela cheia</span>
-                </div>
-                <div class="help-item">
-                    <kbd>O</kbd>
-                    <span>Visão geral dos slides</span>
-                </div>
-                <div class="help-item">
-                    <kbd>D</kbd>
-                    <span>Alternar tema claro/escuro</span>
-                </div>
-                <div class="help-item">
-                    <kbd aria-label="Ponto de interrogação">?</kbd>
-                    <span>Abrir/fechar este menu</span>
+
+                <!-- Conteúdo para touch (mobile/tablet) -->
+                <div class="help-touch" style="display: none;">
+                    <div class="help-item">
+                        <span class="touch-icon" aria-hidden="true">👆</span>
+                        <span>Deslize para a esquerda para avançar</span>
+                    </div>
+                    <div class="help-item">
+                        <span class="touch-icon" aria-hidden="true">👆</span>
+                        <span>Deslize para a direita para voltar</span>
+                    </div>
+                    <div class="help-item">
+                        <span class="touch-icon" aria-hidden="true">👆</span>
+                        <span>Toque nas setas para navegar</span>
+                    </div>
+                    <div class="help-item">
+                        <span class="touch-icon" aria-hidden="true">💡</span>
+                        <span>Use o botão 💻/☀️/🌙 para alternar o tema</span>
+                    </div>
+                    <div class="help-item">
+                        <span class="touch-icon" aria-hidden="true">ℹ️</span>
+                        <span>Toque no canto inferior direito para visão geral</span>
+                    </div>
                 </div>
             </div>
         </aside>

@@ -2,19 +2,40 @@
     const helpToggle = document.getElementById('helpToggle');
     const helpClose = document.getElementById('helpClose');
     const helpMenu = document.getElementById('helpMenu');
+    const helpKeyboard = document.querySelector('.help-keyboard');
+    const helpTouch = document.querySelector('.help-touch');
+
+    // Detectar se é dispositivo touch
+    const isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints > 0 || navigator.msMaxTouchPoints > 0;
+
+    if (isTouchDevice) {
+        helpKeyboard.style.display = 'none';
+        helpTouch.style.display = 'flex';
+        helpTouch.style.flexDirection = 'column';
+        helpTouch.style.gap = '12px';
+    } else {
+        helpKeyboard.style.display = 'flex';
+        helpKeyboard.style.flexDirection = 'column';
+        helpKeyboard.style.gap = '12px';
+        helpTouch.style.display = 'none';
+    }
 
     function openHelpMenu() {
         helpMenu.classList.add('open');
         helpToggle.setAttribute('aria-expanded', 'true');
         helpMenu.setAttribute('aria-hidden', 'false');
-        helpClose.focus();
+        if (!isTouchDevice) {
+            helpClose.focus();
+        }
     }
 
     function closeHelpMenu() {
         helpMenu.classList.remove('open');
         helpToggle.setAttribute('aria-expanded', 'false');
         helpMenu.setAttribute('aria-hidden', 'true');
-        helpToggle.focus();
+        if (!isTouchDevice) {
+            helpToggle.focus();
+        }
     }
 
     helpToggle.addEventListener('click', function() {
@@ -72,13 +93,12 @@ function checkFullscreen() {
     const themeToggle = document.getElementById('themeToggle');
     const helpToggle = document.getElementById('helpToggle');
 
+    // Verifica apenas se está realmente em fullscreen via API
     const isFullscreen = !!(
         document.fullscreenElement ||
         document.webkitFullscreenElement ||
         document.mozFullScreenElement ||
-        document.msFullscreenElement ||
-        window.innerHeight >= screen.height - 50 ||
-        (window.outerHeight >= screen.height && window.outerWidth >= screen.width)
+        document.msFullscreenElement
     );
 
     if (themeToggle) {
