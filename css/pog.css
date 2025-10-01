@@ -1,19 +1,19 @@
 .reveal {
-    font-size: 32px !important;
+    font-size: 28px !important;
 }
 
 .reveal h1 {
-    font-size: 2.2em !important;
+    font-size: 2em !important;
 }
 
 .reveal h2 {
-    font-size: 1.4em !important;
-    margin: 0.3em 0 !important;
+    font-size: 1.3em !important;
+    margin: 0.2em 0 !important;
 }
 
 .reveal h3 {
-    font-size: 1.2em !important;
-    margin: 0.3em 0 !important;
+    font-size: 1.1em !important;
+    margin: 0.2em 0 !important;
 }
 
 .reveal h4 {
@@ -21,14 +21,18 @@
 }
 
 .reveal p {
-    font-size: 0.9em !important;
-    margin: 0.3em 0 !important;
+    font-size: 0.85em !important;
+    margin: 0.2em 0 !important;
 }
 
 .reveal ul,
 .reveal ol {
-    font-size: 0.9em !important;
-    margin: 0.4em 0 !important;
+    font-size: 0.8em !important;
+    margin: 0.3em 0 !important;
+}
+
+.reveal li {
+    margin: 0.15em 0 !important;
 }
 
 .reveal .slides {
@@ -46,13 +50,14 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 20px !important;
+    padding: 15px !important;
     box-sizing: border-box !important;
     height: 100%;
 }
 
 .reveal .slides section > * {
     flex-shrink: 1;
+    max-width: 100%;
 }
 
 .reveal .slides section img {
@@ -88,10 +93,10 @@
 
 .reveal blockquote {
     width: 100%;
-    font-size: 80%;
+    font-size: 70%;
     text-align: right;
     float: right;
-    margin: 10px auto 20px !important;
+    margin: 8px auto 10px !important;
     border-top: solid 2px #AEB0BB;
     border-left: none !important;
     box-shadow: none;
@@ -110,21 +115,35 @@
 }
 
 .reveal .lead {
-    font-size: 105%;
+    font-size: 100%;
     font-weight: bolder;
+}
+
+.reveal .row {
+    width: 100%;
+    max-width: 100%;
+}
+
+.reveal .col-md-6,
+.reveal .col-md-4,
+.reveal .col-md-8 {
+    padding: 5px;
 }
 
 .reveal dt {
     display: block;
     text-align: left;
     font-weight: bold;
+    font-size: 0.9em;
+    margin: 0.2em 0;
 }
 
 .reveal dd {
     display: block;
     text-align: left;
     padding-left: 5%;
-    font-size: 80%;
+    font-size: 75%;
+    margin: 0.1em 0;
 }
 
 .reveal .img-center {
