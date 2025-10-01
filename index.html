@@ -8,171 +8,14 @@
         <meta name="apple-mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-        <link rel="stylesheet" href="css/reveal.min.css">
-        <link rel="stylesheet" href="css/theme/solarized.css" id="theme">
-        <link rel="stylesheet" href="lib/css/zenburn.css">
-        <link rel="stylesheet" href="css/bootstrap.min.css">
-        <link rel="stylesheet" href="css/bootstrap-theme.min.css">
-        <script>
-                if( window.location.search.match( /print-pdf/gi ) ) {
-                var link = document.createElement( 'link' );
-                link.rel = 'stylesheet';
-                link.type = 'text/css';
-                link.href = 'css/print/pdf.css';
-                document.getElementsByTagName( 'head' )[0].appendChild( link );
-                }
-        </script>
-        <!--[if lt IE 9]>
-        <script src="lib/js/html5shiv.js"></script>
-        <![endif]-->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@3.9.2/css/reveal.min.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@3.9.2/css/theme/solarized.css" id="theme">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@3.9.2/lib/css/zenburn.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/css/bootstrap-theme.min.css">
         <link rel="stylesheet" href="css/pog.css">
-        
-        <style>
-            /* Estilos para o modo dark */
-            body {
-                transition: background-color 0.3s ease, color 0.3s ease;
-            }
-
-            body.dark-mode {
-                background-color: #1a1a1a;
-                color: #e0e0e0;
-            }
-
-            body.dark-mode .reveal {
-                background-color: #1a1a1a;
-            }
-
-            body.dark-mode .reveal .slides {
-                color: #e0e0e0;
-            }
-
-            body.dark-mode .reveal h1,
-            body.dark-mode .reveal h2,
-            body.dark-mode .reveal h3,
-            body.dark-mode .reveal h4 {
-                color: #f0f0f0;
-            }
-
-            body.dark-mode .reveal blockquote {
-                background: #2a2a2a;
-                border-left: 5px solid #4a9eff;
-                color: #d0d0d0;
-            }
-
-            body.dark-mode .reveal blockquote cite {
-                color: #a0a0a0;
-            }
-
-            body.dark-mode .reveal pre {
-                background: #2a2a2a;
-                border: 1px solid #3a3a3a;
-            }
-
-            body.dark-mode .reveal code {
-                background: #2a2a2a;
-                color: #4a9eff;
-            }
-
-            body.dark-mode .color4-darker {
-                color: #6ab0ff !important;
-            }
-
-            body.dark-mode .color5-darker {
-                color: #ff6b6b !important;
-            }
-
-            /* Botão de toggle do tema */
-            .theme-toggle {
-                position: fixed;
-                top: 20px;
-                right: 20px;
-                z-index: 1000;
-                background: none;
-                border: 2px solid currentColor;
-                border-radius: 50%;
-                width: 50px;
-                height: 50px;
-                cursor: pointer;
-                font-size: 24px;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                transition: all 0.3s ease;
-                color: #333;
-            }
-
-            body.dark-mode .theme-toggle {
-                color: #f0f0f0;
-            }
-
-            .theme-toggle:hover {
-                transform: rotate(20deg) scale(1.1);
-                box-shadow: 0 0 15px currentColor;
-            }
-
-            .theme-toggle:active {
-                transform: rotate(20deg) scale(0.95);
-            }
-
-            /* Ícones dos temas */
-            .theme-toggle .auto-icon,
-            .theme-toggle .sun-icon,
-            .theme-toggle .moon-icon {
-                transition: opacity 0.3s ease;
-                display: none;
-            }
-
-            body[data-theme="auto"] .theme-toggle .auto-icon {
-                display: block;
-            }
-
-            body[data-theme="light"] .theme-toggle .sun-icon {
-                display: block;
-            }
-
-            body[data-theme="dark"] .theme-toggle .moon-icon {
-                display: block;
-            }
-
-            /* Ajustes para imagens no modo dark */
-            body.dark-mode .reveal img {
-                filter: brightness(0.9);
-            }
-
-            /* Correção para imagens que saem da tela */
-            .reveal img {
-                max-width: 100%;
-                max-height: 70vh;
-                height: auto;
-                object-fit: contain;
-            }
-
-            .reveal .img-center {
-                display: block;
-                margin-left: auto;
-                margin-right: auto;
-            }
-
-            .reveal .img-50 {
-                max-width: 50%;
-            }
-
-            .reveal .img-70 {
-                max-width: 70%;
-            }
-
-            /* Garantir que seções com imagens grandes não ultrapassem os limites */
-            .reveal section {
-                height: 100%;
-            }
-
-            .reveal section img {
-                max-height: 60vh;
-            }
-        </style>
     </head>
     <body>
-        <!-- Botão de toggle do tema -->
         <button class="theme-toggle" id="themeToggle" aria-label="Alternar tema">
             <span class="auto-icon">💻</span>
             <span class="sun-icon">☀️</span>
@@ -527,7 +370,6 @@
                     </ul>
 
                     <pre><code data-trim>
-//Xunxa o nome da impressora no código. Quem quer escolher impressora?
 infoImpressao = ImpressaoUtils.getInfoImpressao(codigoRelatorio, "PADRAO");
                     </code></pre>
 
@@ -550,12 +392,8 @@ infoImpressao = ImpressaoUtils.getInfoImpressao(codigoRelatorio, "PADRAO");
                     </ul>
 
                     <pre><code data-trim>
-/* Variável é inicializada */
 String valor = "123";
 
-/* ... lógica do programa ... */
-
-/* Dentro de um método que utiliza a variável 'valor' */
 if (valor != "123") {
     valor = "123";
     processaValor(valor);
@@ -595,14 +433,13 @@ if (valor != "123") {
 teste1, temp2, a, b, x
 jaTrocouDeAba, botaoClicado, foiAtualizado, passouPorAqui
 numeroMagico, naoAchou, temErro
-anterior5, atual5, anteriorDoAnterior5 
+anterior5, atual5, anteriorDoAnterior5
                     </code></pre>
                     <blockquote>
                         <p>É só reiniciar que funciona!</p>
                         <cite>POGramador logo de manhã com copo de café na mão</cite>
                     </blockquote>
                 </section>
-
 
                  <section>
                     <h2>Commented Code Implementation / Comments Forever</h2>
@@ -722,7 +559,6 @@ public Tabela montaTabela(String linguicao){
 
     for(String coluna : colunas){
         String[] campos = coluna.split(",");
-        // POGuices com os valores
     }
 }
                     </code></pre>
@@ -742,9 +578,7 @@ public Tabela montaTabela(String linguicao){
 public class MedidorDePOGresso implements Runnable {
     public void run() {
         while (true) {
-            // Realiza um processamento rápido aqui...
             try {
-                // ... atrasa propositalmente aqui
                 Thread.sleep(1000);
             } catch (InterruptedException exc) {
             }
@@ -802,17 +636,7 @@ public class MedidorDePOGresso implements Runnable {
                 <section>
                     <h2>Thunder Mega Zord</h2>
                     <pre><code data-trim>
-/**
- * Processa
- *
- * @param parametros
- * @return
- * @throws Throwable
- */
 public static Object[] processar(Map parametros) throws Throwable {
-    // Aí é aquilo, mermão...
-    // ...
-    // ...
     return processado;
 }
                     </code></pre>
@@ -915,75 +739,8 @@ public static Object[] processar(Map parametros) throws Throwable {
             </div>
         </div>
 
-        <script src="lib/js/head.min.js"></script>
-        <script src="js/reveal.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/reveal.js@3.9.2/lib/js/head.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/reveal.js@3.9.2/js/reveal.min.js"></script>
         <script src="js/pog.js"></script>
-        
-        <script>
-            // Script para controlar o dark mode
-            (function() {
-                const themeToggle = document.getElementById('themeToggle');
-                const body = document.body;
-                
-                // Detecta a preferência do sistema
-                const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)');
-                
-                // Verifica se há preferência salva, senão usa 'auto' como padrão
-                let currentTheme = localStorage.getItem('theme') || 'auto';
-                
-                // Função para aplicar o tema
-                function applyTheme(theme) {
-                    body.setAttribute('data-theme', theme);
-                    
-                    if (theme === 'auto') {
-                        // Usa a preferência do sistema
-                        if (systemPrefersDark.matches) {
-                            body.classList.add('dark-mode');
-                        } else {
-                            body.classList.remove('dark-mode');
-                        }
-                    } else if (theme === 'dark') {
-                        body.classList.add('dark-mode');
-                    } else {
-                        body.classList.remove('dark-mode');
-                    }
-                }
-                
-                // Aplica o tema inicial
-                applyTheme(currentTheme);
-                
-                // Toggle entre os três modos: auto -> light -> dark -> auto
-                themeToggle.addEventListener('click', function() {
-                    if (currentTheme === 'auto') {
-                        currentTheme = 'light';
-                    } else if (currentTheme === 'light') {
-                        currentTheme = 'dark';
-                    } else {
-                        currentTheme = 'auto';
-                    }
-                    
-                    localStorage.setItem('theme', currentTheme);
-                    applyTheme(currentTheme);
-                });
-                
-                // Escuta mudanças na preferência do sistema (apenas quando está em modo auto)
-                systemPrefersDark.addEventListener('change', function(e) {
-                    if (currentTheme === 'auto') {
-                        if (e.matches) {
-                            body.classList.add('dark-mode');
-                        } else {
-                            body.classList.remove('dark-mode');
-                        }
-                    }
-                });
-                
-                // Atalho de teclado: pressione 'd' para alternar o tema
-                document.addEventListener('keydown', function(e) {
-                    if (e.key === 'd' || e.key === 'D') {
-                        themeToggle.click();
-                    }
-                });
-            })();
-        </script>
     </body>
 </html>
