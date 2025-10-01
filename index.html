@@ -1,9 +1,9 @@
 <!doctype html>
-<html lang="en">
+<html lang="pt-BR">
     <head>
         <meta charset="utf-8">
-        <title>A arte da Programação Orientada à Gambiarra</title>
-        <meta name="description" content="A arte da Programação Orientada à Gambiarra - Como garantir que o inferno seja uma amostra grátis do seu trabalho!">
+        <title>A arte da Programação Orientada à Gambiarra - POG</title>
+        <meta name="description" content="Guia satírico sobre Programação Orientada à Gambiarra - Como garantir que o inferno seja uma amostra grátis do seu trabalho!">
         <meta name="author" content="Josenaldo de Oliveira Matos Filho">
         <meta name="apple-mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
@@ -16,17 +16,21 @@
         <link rel="stylesheet" href="./css/pog.css">
     </head>
     <body>
-        <button class="theme-toggle" id="themeToggle" aria-label="Alternar tema">
-            <span class="auto-icon">💻</span>
-            <span class="sun-icon">☀️</span>
-            <span class="moon-icon">🌙</span>
-        </button>
+        <a href="#main-content" class="skip-link">Pular para o conteúdo principal</a>
 
-        <button class="help-toggle" id="helpToggle" aria-label="Atalhos de navegação">
-            ?
-        </button>
+        <nav aria-label="Controles da página">
+            <button class="theme-toggle" id="themeToggle" aria-label="Alternar entre tema claro, escuro e automático" title="Pressione D para alternar">
+                <span class="auto-icon" aria-hidden="true">💻</span>
+                <span class="sun-icon" aria-hidden="true">☀️</span>
+                <span class="moon-icon" aria-hidden="true">🌙</span>
+            </button>
 
-        <div class="help-menu" id="helpMenu">
+            <button class="help-toggle" id="helpToggle" aria-label="Abrir menu de atalhos de navegação" aria-expanded="false" title="Pressione ? para abrir">
+                <span aria-hidden="true">?</span>
+            </button>
+        </nav>
+
+        <aside class="help-menu" id="helpMenu" role="dialog" aria-labelledby="help-title" aria-hidden="true">
             <h3>Atalhos de Navegação</h3>
             <div class="help-content">
                 <div class="help-item">
@@ -70,26 +74,28 @@
                     <span>Abrir/fechar este menu</span>
                 </div>
             </div>
-        </div>
+        </aside>
 
-        <div class="reveal">
+        <main id="main-content" class="reveal" role="main">
             <div class="slides">
-                <section>
+                <section aria-label="Slide 1 de 44 - Título principal">
                     <h1>A arte da Programação Orientada à Gambiarra</h1>
                     <h3 class="color4-darker">Como garantir que o inferno seja uma amostra grátis do seu trabalho!</h3>
                     <p class="color5-darker">O guia definitivo para escrever código que funciona... até funcionar</p>
                 </section>
 
-                <section>
+                <section aria-label="Índice do conteúdo">
                     <h2>O que você vai aprender</h2>
-                    <ol class="color4-darker">
-                        <li>O que é POG</li>
-                        <li>Histórico</li>
-                        <li>Requisitos</li>
-                        <li>Princípios</li>
-                        <li>Técnicas</li>
-                        <li>Gambi Design Patterns</li>
-                    </ol>
+                    <nav aria-label="Índice da apresentação">
+                        <ol class="color4-darker">
+                            <li>O que é POG</li>
+                            <li>Histórico</li>
+                            <li>Requisitos</li>
+                            <li>Princípios</li>
+                            <li>Técnicas</li>
+                            <li>Gambi Design Patterns</li>
+                        </ol>
+                    </nav>
 
                     <blockquote>
                         <p>É só fazer do jeito que eu to falando que entregamos na data correta.</p>
@@ -114,7 +120,7 @@
                     <div>
                         <div class="row">
                             <div class="col-md-4">
-                                <img src="img/Gregory_XIII.jpg" class="img-center img-70" alt="Paga Gregorio">
+                                <img src="img/Gregory_XIII.jpg" class="img-center img-70" alt="Retrato do Papa Gregório XIII, criador do calendário gregoriano que introduziu o ano bissexto como solução gambiarra">
                             </div>
                             <div class="col-md-8 color4-darker">
                                 <p class="lead">A primeira POG da história foi criada pelo Paga Gregório XIII</p>
@@ -257,7 +263,7 @@
                 <section>
                     <h1>Técnicas de POG</h1>
                     <h2 class="color4-darker">The ninja POG!</h2>
-                    <img class="img-center" src="img/ninja.png"></img>
+                    <img class="img-center" src="img/ninja.png" alt="Ilustração de um ninja representando as técnicas secretas de programação orientada à gambiarra">
                 </section>
 
                 <section>
@@ -378,7 +384,7 @@
                 <section>
                     <h1>Gambi Design Patterns</h1>
                     <h2 class="color4-darker">May the POG be with you!</h2>
-                    <img src="img/JediTux.png" alt="Tux POG Jedi" class="img-center">
+                    <img src="img/JediTux.png" alt="Tux, o pinguim mascote do Linux, vestido como um Jedi segurando um sabre de luz, representando os padrões de design gambiarra" class="img-center">
                 </section>
 
                 <section>
@@ -386,14 +392,14 @@
                     <ul class="color4-darker">
                         <li>Sabe aquele código que você sabe que funciona, mas que, pra você, parece magia negra?</li>
                     </ul>
-                    <pre><code data-trim>
+                    <pre role="region" aria-label="Exemplo de código Java"><code data-trim>
 Optional.ofNullable(user)
     .map(User::getAddress)
     .map(Address::getStreet)
     .orElse("???");
                     </code></pre>
 
-                    <img class="img-50 img-center" src="img/wat.png" alt="wat">
+                    <img class="img-50 img-center" src="img/wat.png" alt="Meme wat - pessoa confusa olhando código incompreensível">
 
                     <blockquote>
                         <p>É só colocar um IF!!</p>
@@ -437,7 +443,7 @@ fetch(`https://api.stripe.com`, { headers: { Authorization: API_KEY }});
 
                 <section>
                     <h1>ATENÇÃO</h1>
-                    <img src="img/winter.png" alt="POG is comming" class="img-center img-70">
+                    <img src="img/winter.png" alt="Paródia de Game of Thrones - POG is coming - A Programação Orientada à Gambiarra está chegando" class="img-center img-70" role="img">
                 </section>
 
                 <section>
@@ -472,7 +478,7 @@ public void processar() {
                         <li>Isso é frescura dessas ferramentas modernas</li>
                         <li>De preferência, use o @SuppressWarnings("all")</li>
                     </ul>
-                    <img src="img/warnings.png" alt="Warnings" class="img-50 img-center">
+                    <img src="img/warnings.png" alt="Screenshot mostrando dezenas de avisos do compilador e IDE sendo ignorados pelo programador" class="img-50 img-center">
                     <blockquote>
                         <p>Terminei, só falta rodar o mvn test.</p>
                         <cite>POGramador Java, às 18h00, com a mochila nas costas</cite>
@@ -547,7 +553,7 @@ if (number.equals("1")) {
                     <ul class="color4-darker">
                         <li>Capture e trate TODO tipo de problema que ocorrer</li>
                     </ul>
-                    <img src="img/galdalf.png" alt="Run you fools!" class="img-center img-70">
+                    <img src="img/galdalf.png" alt="Gandalf do Senhor dos Anéis gritando You Shall Not Pass, representando o bloqueio de todas as exceções" class="img-center img-70">
                     <blockquote>
                         <p>Que lixo que fizeram!!! Olha isso!!</p>
                         <cite>POGgramador falando sobre o código de outro POGgramador</cite>
@@ -670,7 +676,7 @@ public class ProcessamentoService {
                         <li>Padrão clássico do Java enterprise!</li>
                         <li>É o capiroto em forma de design pattern!</li>
                     </ul>
-                    <img src="img/cat.jpg" alt="Map com parâmetros é mochila de criança!" class="img-center img-50">
+                    <img src="img/cat.jpg" alt="Gato preto em sala escura - metáfora para usar Map com Object ao invés de parâmetros tipados" class="img-center img-50">
                     <blockquote>
                         <p>Tem bug, mas é culpa do Tomcat!</p>
                         <cite>Estagiário Java justificando ClassCastException</cite>
@@ -685,7 +691,7 @@ public class ProcessamentoService {
                         <li>1500 linhas em um único método</li>
                         <li>SOLID? Nunca ouvi falar!</li>
                     </ul>
-                    <img src="img/megaman.png" alt="Robô do Spielvan" class="img-center img-50">
+                    <img src="img/megaman.png" alt="Mega Man, personagem de videogame, representando um método gigante que faz todas as funcionalidades" class="img-center img-50">
                     <blockquote>
                         <p>É só adicionar mais um IF aqui dentro!</p>
                         <cite>POGramador Java abrindo o método de 2000 linhas</cite>
@@ -697,7 +703,7 @@ public class ProcessamentoService {
                     <ul class="color4-darker">
                         <li>A fusão entre um Megazord e um Gato preto em Quarto Escuro cria um Thunder Megazord</li>
                     </ul>
-                    <img src="img/megamanx.png" alt="Robô do Spielvan" class="img-center img-50">
+                    <img src="img/megamanx.png" alt="Mega Man X, versão evoluída representando a fusão de múltiplos anti-padrões em um único método" class="img-center img-50">
                     <blockquote>
                         <p>O Senhor já tentou reiniciar seu computador? Caso sim vou pedir que desligue seu modem e religue novamente...</p>
                         <cite>Atendente da CTBC ou Velox utilizando técnicas de TelePOG</cite>
@@ -788,33 +794,38 @@ export const processar = async (parametros: any): Promise<any> => {
                     </blockquote>
                 </section>
 
-                <section>
+                <section aria-label="Links para materiais complementares">
                     <h2>Materiais que imitam ou se inspiram nesta apresentação</h2>
-                    <ul class="color4-darker">
-                        <li>
-                            <a href="http://desciclopedia.org/wiki/Programa%C3%A7%C3%A3o_Orientada_a_Gambiarras" target="_blank">
-                                Programação Orientada a Gambiarra - Desciclopédia
-                            </a>
-                        </li>
-                        <li>
-                            <a href="http://desciclopedia.org/wiki/Gambi_Design_Patterns" target="_blank">
-                                Gambi Design Patterns - Desciclopédia
-                            </a>
-                        </li>
-                        <li>
-                            <a href="https://github.com/carlosaml/gambi-design-patterns" target="_blank">
-                                Gambi Design Patterns - GitHub
-                            </a>
-                        </li>
-                    </ul>
+                    <nav aria-label="Links externos relacionados">
+                        <ul class="color4-darker">
+                            <li>
+                                <a href="http://desciclopedia.org/wiki/Programa%C3%A7%C3%A3o_Orientada_a_Gambiarras" target="_blank" rel="noopener noreferrer">
+                                    Programação Orientada a Gambiarra - Desciclopédia
+                                    <span class="sr-only">(abre em nova aba)</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="http://desciclopedia.org/wiki/Gambi_Design_Patterns" target="_blank" rel="noopener noreferrer">
+                                    Gambi Design Patterns - Desciclopédia
+                                    <span class="sr-only">(abre em nova aba)</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://github.com/carlosaml/gambi-design-patterns" target="_blank" rel="noopener noreferrer">
+                                    Gambi Design Patterns - GitHub
+                                    <span class="sr-only">(abre em nova aba)</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
                 </section>
 
                 <section>
                     <h1  class="color5-darker">Vida longa e próspera, jovens gafanhotos</h1>
-                    <img src="img/pogramador.png" alt="Magníficas oportunidades!" class="img-center">
+                    <img src="img/pogramador.png" alt="Ilustração satírica de um programador cercado de gambiarras e código caótico" class="img-center">
                 </section>
             </div>
-        </div>
+        </main>
 
         <script src="https://cdn.jsdelivr.net/npm/reveal.js@3.9.2/js/reveal.min.js"></script>
         <script src="./js/pog.js"></script>

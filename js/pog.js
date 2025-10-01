@@ -3,22 +3,30 @@
     const helpMenu = document.getElementById('helpMenu');
 
     helpToggle.addEventListener('click', function() {
-        helpMenu.classList.toggle('open');
+        const isOpen = helpMenu.classList.toggle('open');
+        helpToggle.setAttribute('aria-expanded', isOpen);
+        helpMenu.setAttribute('aria-hidden', !isOpen);
     });
 
     document.addEventListener('click', function(e) {
         if (!helpMenu.contains(e.target) && !helpToggle.contains(e.target)) {
             helpMenu.classList.remove('open');
+            helpToggle.setAttribute('aria-expanded', 'false');
+            helpMenu.setAttribute('aria-hidden', 'true');
         }
     });
 
     document.addEventListener('keydown', function(e) {
         if (e.key === '?' && !e.shiftKey) {
-            helpMenu.classList.toggle('open');
+            const isOpen = helpMenu.classList.toggle('open');
+            helpToggle.setAttribute('aria-expanded', isOpen);
+            helpMenu.setAttribute('aria-hidden', !isOpen);
             e.preventDefault();
         }
         if (e.key === 'Escape' && helpMenu.classList.contains('open')) {
             helpMenu.classList.remove('open');
+            helpToggle.setAttribute('aria-expanded', 'false');
+            helpMenu.setAttribute('aria-hidden', 'true');
             e.stopPropagation();
             e.preventDefault();
             return false;
