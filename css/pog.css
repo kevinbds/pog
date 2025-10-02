@@ -798,6 +798,17 @@ body:-ms-fullscreen .help-toggle {
     .reveal .col-md-8 {
         width: 100% !important;
         padding: 3px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .reveal .col-md-6 dl {
+        width: 100%;
+        text-align: left;
+        display: flex;
+        flex-direction: column;
+        gap: 0.15em;
     }
 
     .reveal .col-md-4 img,
