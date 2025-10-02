@@ -419,11 +419,11 @@
                     <ul class="color4-darker">
                         <li>Sabe aquele código que você sabe que funciona, mas que, pra você, parece magia negra?</li>
                     </ul>
-                    <pre role="region" aria-label="Exemplo de código Java"><code data-trim>
-Optional.ofNullable(user)
-    .map(User::getAddress)
-    .map(Address::getStreet)
-    .orElse("???");
+                    <pre role="region" aria-label="Exemplo de código JavaScript"><code data-trim>
+const resultado = dados?.usuario?.endereco?.rua || "???";
+
+// Ou ainda pior:
+eval(localStorage.getItem('config'));
                     </code></pre>
 
                     <img class="img-50 img-center" src="img/wat.png" alt="Meme wat - pessoa confusa olhando código incompreensível">
@@ -481,19 +481,19 @@ fetch(`https://api.stripe.com`, { headers: { Authorization: API_KEY }});
                     </ul>
 
                     <pre><code data-trim>
-@Autowired(required = false)
-private UserService userService;
+function processar(dados) {
+    let usuario = dados.usuario;
 
-public void processar() {
-    if (userService == null) {
-        userService = new UserServiceImpl();
+    if (!usuario) {
+        usuario = { nome: "Anônimo", email: "nao-sei@email.com" };
     }
-    userService.save(user);
+
+    salvarNoBanco(usuario);
 }
                     </code></pre>
                     <blockquote role="note" aria-label="Citação satírica">
-                        <p>O código tá certo, deve ser problema no Spring Boot.</p>
-                        <cite>POGgramador Java com várias certificações Oracle</cite>
+                        <p>O código tá certo, deve ser problema no servidor.</p>
+                        <cite>POGramador Full Stack resolvendo bugs</cite>
                     </blockquote>
                 </section>
 
@@ -675,22 +675,20 @@ public ResponseEntity processar(@RequestBody String dados) {
                     </ul>
 
                     <pre><code data-trim>
-@Service
-public class ProcessamentoService {
+async function salvarDados(dados) {
+    // Adiciona delay para "parecer profissional"
+    await new Promise(resolve => setTimeout(resolve, 3000));
 
-    @Async
-    public CompletableFuture<String> processar() {
-        try {
-            Thread.sleep(3000);
-        } catch (InterruptedException e) {
-            Thread.currentThread().interrupt();
-        }
-        return CompletableFuture.completedFuture("Processado!");
-    }
+    return { sucesso: true, mensagem: "Processado!" };
+}
+
+// Ou ainda:
+function mostrarLoading() {
+    setTimeout(() => { /* já terminou há 2 segundos */ }, 5000);
 }
                     </code></pre>
                     <blockquote role="note" aria-label="Citação satírica">
-                        <p>Ontem o build do Maven estava passando!</p>
+                        <p>Ontem todos os testes estavam passando!</p>
                         <cite>POGramador ao ver 47 testes falhando</cite>
                     </blockquote>
                 </section>
@@ -740,13 +738,17 @@ public class ProcessamentoService {
                 <section>
                     <h2>Thunder Mega Zord</h2>
                     <pre><code data-trim>
-export const processar = async (parametros: any): Promise<any> => {
+async function processar(parametros) {
     try {
-        return await processado;
-    } catch {
+        let resultado = await fazerAlgo(parametros);
+        return resultado;
+    } catch (erro) {
+        // Ignora qualquer erro e retorna null
         return null;
     }
 }
+
+// Uso: processar(qualquerCoisa) // sempre funciona!
                     </code></pre>
                     <blockquote role="note" aria-label="Citação satírica">
                         <p>Não funciona no Safari? Pede pro usuário usar Chrome!</p>
