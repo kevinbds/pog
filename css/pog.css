@@ -3,7 +3,11 @@
 }
 
 .reveal h1 {
-    font-size: 2em !important;
+    font-size: 3em !important;
+    word-wrap: break-word !important;
+    overflow-wrap: break-word !important;
+    hyphens: auto !important;
+    line-height: 1.2 !important;
 }
 
 .reveal h2 {
@@ -52,15 +56,34 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 15px !important;
+    padding: 15px 5% !important;
     box-sizing: border-box !important;
     height: 100%;
     min-height: 100vh;
 }
 
+@media (min-width: 1024px) {
+    .reveal .slides section {
+        padding: 15px 10% !important;
+    }
+}
+
+@media (min-width: 1440px) {
+    .reveal .slides section {
+        padding: 15px 15% !important;
+    }
+}
+
+@media (min-width: 1920px) {
+    .reveal .slides section {
+        padding: 15px 20% !important;
+    }
+}
+
 .reveal .slides section > * {
     flex-shrink: 1;
     max-width: 100%;
+    width: 100%;
 }
 
 .reveal .slides section img {
