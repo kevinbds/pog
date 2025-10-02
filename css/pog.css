@@ -39,6 +39,8 @@
     text-align: center;
     opacity: 0;
     transition: opacity 0.3s ease-in;
+    top: 0 !important;
+    bottom: 0 !important;
 }
 
 .reveal.ready .slides {
@@ -53,6 +55,7 @@
     padding: 15px !important;
     box-sizing: border-box !important;
     height: 100%;
+    min-height: 100vh;
 }
 
 .reveal .slides section > * {
@@ -610,7 +613,230 @@ body:-ms-fullscreen .help-toggle {
     display: none !important;
 }
 
-@media (max-width: 768px) {
+/* Mobile Portrait - Melhorias para visualização vertical */
+@media (max-width: 768px) and (orientation: portrait) {
+    .reveal .slides {
+        top: 0 !important;
+        left: 0 !important;
+        right: 0 !important;
+        bottom: 0 !important;
+        width: 100% !important;
+        height: 100% !important;
+    }
+
+    .reveal {
+        font-size: 20px !important;
+    }
+
+    .reveal h1 {
+        font-size: 1.5em !important;
+        line-height: 1.1 !important;
+        margin: 0.2em 0 !important;
+    }
+
+    .reveal h2 {
+        font-size: 1.15em !important;
+        line-height: 1.2 !important;
+        margin: 0.15em 0 !important;
+    }
+
+    .reveal h3 {
+        font-size: 0.95em !important;
+        margin: 0.1em 0 !important;
+    }
+
+    .reveal p {
+        font-size: 0.75em !important;
+        line-height: 1.3 !important;
+        margin: 0.1em 0 !important;
+    }
+
+    .reveal ul,
+    .reveal ol {
+        font-size: 0.7em !important;
+        margin: 0.15em 0 0.15em 1em !important;
+        padding-left: 0.5em !important;
+    }
+
+    .reveal li {
+        margin: 0.08em 0 !important;
+        line-height: 1.25 !important;
+    }
+
+    .reveal .slides section {
+        padding: 5px 12px !important;
+        justify-content: space-evenly !important;
+        min-height: 100vh !important;
+        gap: 0.25em !important;
+    }
+
+    .reveal img {
+        max-height: 35vh !important;
+        max-width: 85% !important;
+        margin: 5px auto !important;
+    }
+
+    .reveal .img-50 {
+        max-height: 30vh !important;
+        max-width: 75% !important;
+    }
+
+    .reveal .img-70 {
+        max-height: 35vh !important;
+        max-width: 80% !important;
+    }
+
+    .reveal blockquote {
+        font-size: 55%;
+        margin: 3px auto 5px !important;
+        padding: 4px 8px !important;
+    }
+
+    .reveal blockquote p {
+        font-size: 0.85em !important;
+        margin-bottom: 2px !important;
+    }
+
+    .reveal blockquote cite {
+        font-size: 60%;
+    }
+
+    .reveal pre {
+        font-size: 0.38em !important;
+        line-height: 1.15em !important;
+        margin: 4px auto !important;
+    }
+
+    .reveal pre code {
+        padding: 6px !important;
+    }
+
+    .reveal dt {
+        font-size: 0.78em;
+        margin: 0.1em 0;
+    }
+
+    .reveal dd {
+        font-size: 68%;
+        padding-left: 3%;
+        margin: 0.05em 0;
+    }
+
+    .reveal .row {
+        display: flex;
+        flex-direction: column !important;
+    }
+
+    .reveal .col-md-4,
+    .reveal .col-md-6,
+    .reveal .col-md-8 {
+        width: 100% !important;
+        padding: 3px;
+    }
+
+    .reveal .col-md-4 img,
+    .reveal .col-md-6 img,
+    .reveal .col-md-8 img {
+        max-height: 25vh !important;
+    }
+
+    .reveal .lead {
+        font-size: 90%;
+    }
+
+    .help-menu {
+        width: 100%;
+        right: -100%;
+        padding: 70px 15px 15px 15px;
+    }
+
+    .help-menu h3 {
+        font-size: 1.1em;
+    }
+
+    .help-close {
+        top: 15px;
+        right: 15px;
+        width: 35px;
+        height: 35px;
+        font-size: 24px;
+    }
+
+    .help-item {
+        font-size: 0.85em;
+    }
+
+    .help-item kbd {
+        font-size: 0.85em;
+        padding: 2px 6px;
+        min-width: 30px;
+    }
+
+    .theme-toggle {
+        top: 15px;
+        right: 70px;
+        width: 45px;
+        height: 45px;
+        font-size: 20px;
+    }
+
+    .help-toggle {
+        top: 15px;
+        right: 15px;
+        width: 45px;
+        height: 45px;
+        font-size: 20px;
+    }
+
+    .credits-container {
+        padding: 0 10px;
+    }
+
+    .reveal .credits-description {
+        font-size: 0.55em !important;
+        padding: 8px 12px !important;
+        margin: 15px auto !important;
+    }
+}
+
+/* Tablet Portrait */
+@media (min-width: 769px) and (max-width: 1024px) and (orientation: portrait) {
+    .reveal {
+        font-size: 24px !important;
+    }
+
+    .reveal h1 {
+        font-size: 1.7em !important;
+    }
+
+    .reveal h2 {
+        font-size: 1.2em !important;
+    }
+
+    .reveal img {
+        max-height: 45vh !important;
+        max-width: 75% !important;
+    }
+
+    .reveal .img-50 {
+        max-height: 40vh !important;
+    }
+
+    .reveal .img-70 {
+        max-height: 45vh !important;
+    }
+
+    .reveal blockquote {
+        font-size: 65%;
+    }
+
+    .reveal pre {
+        font-size: 0.45em !important;
+    }
+}
+
+/* Mobile Landscape - Mantém otimizações originais */
+@media (max-width: 768px) and (orientation: landscape) {
     .help-menu {
         width: 100%;
         right: -100%;

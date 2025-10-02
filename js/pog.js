@@ -82,7 +82,12 @@ Reveal.initialize({
     history: true,
     center: true,
     theme: Reveal.getQueryHash().theme,
-    transition: Reveal.getQueryHash().transition || 'default'
+    transition: Reveal.getQueryHash().transition || 'default',
+    width: '100%',
+    height: '100%',
+    margin: 0.02,
+    minScale: 0.2,
+    maxScale: 2.0
 });
 
 Reveal.addEventListener('ready', function() {
