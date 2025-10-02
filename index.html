@@ -20,15 +20,25 @@
         <a href="#main-content" class="skip-link">Pular para o conteúdo principal</a>
 
         <nav aria-label="Controles da página">
-            <button class="theme-toggle" id="themeToggle" aria-label="Alternar entre tema claro, escuro e automático" title="Pressione D para alternar">
-                <span class="auto-icon" aria-hidden="true">🌗</span>
-                <span class="sun-icon" aria-hidden="true">☀️</span>
-                <span class="moon-icon" aria-hidden="true">🌙</span>
+            <button class="menu-toggle" id="menuToggle" aria-label="Abrir menu de controles" aria-expanded="false" title="Abrir menu">
+                <span class="menu-icon" aria-hidden="true">☰</span>
             </button>
 
-            <button class="help-toggle" id="helpToggle" aria-label="Abrir menu de atalhos de navegação" aria-expanded="false" title="Pressione ? para abrir">
-                <span aria-hidden="true">?</span>
-            </button>
+            <div class="controls-menu" id="controlsMenu">
+                <button class="overview-toggle" id="overviewToggle" aria-label="Alternar visão geral dos slides" title="Pressione O ou ESC para alternar">
+                    <span aria-hidden="true">⊞</span>
+                </button>
+
+                <button class="theme-toggle" id="themeToggle" aria-label="Alternar entre tema claro, escuro e automático" title="Pressione D para alternar">
+                    <span class="auto-icon" aria-hidden="true">🌗</span>
+                    <span class="sun-icon" aria-hidden="true">☀️</span>
+                    <span class="moon-icon" aria-hidden="true">🌙</span>
+                </button>
+
+                <button class="help-toggle" id="helpToggle" aria-label="Abrir menu de atalhos de navegação" aria-expanded="false" title="Pressione ? para abrir">
+                    <span aria-hidden="true">?</span>
+                </button>
+            </div>
         </nav>
 
         <aside class="help-menu" id="helpMenu" role="dialog" aria-labelledby="help-title" aria-hidden="true">

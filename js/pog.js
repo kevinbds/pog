@@ -1,4 +1,7 @@
 (function() {
+    const menuToggle = document.getElementById('menuToggle');
+    const controlsMenu = document.getElementById('controlsMenu');
+    const overviewToggle = document.getElementById('overviewToggle');
     const helpToggle = document.getElementById('helpToggle');
     const helpClose = document.getElementById('helpClose');
     const helpMenu = document.getElementById('helpMenu');
@@ -58,6 +61,36 @@
         }
     });
 
+    menuToggle.addEventListener('click', function(e) {
+        e.stopPropagation();
+        const isOpen = controlsMenu.classList.contains('open');
+
+        if (isOpen) {
+            controlsMenu.classList.remove('open');
+            menuToggle.classList.remove('open');
+            menuToggle.setAttribute('aria-expanded', 'false');
+        } else {
+            controlsMenu.classList.add('open');
+            menuToggle.classList.add('open');
+            menuToggle.setAttribute('aria-expanded', 'true');
+        }
+    });
+
+    document.addEventListener('click', function(e) {
+        if (!controlsMenu.contains(e.target) && !menuToggle.contains(e.target)) {
+            if (controlsMenu.classList.contains('open')) {
+                controlsMenu.classList.remove('open');
+                menuToggle.classList.remove('open');
+                menuToggle.setAttribute('aria-expanded', 'false');
+            }
+        }
+    });
+
+    overviewToggle.addEventListener('click', function(e) {
+        e.stopPropagation();
+        Reveal.toggleOverview();
+    });
+
     document.addEventListener('keydown', function(e) {
         if (e.key === '?' && !e.shiftKey) {
             if (helpMenu.classList.contains('open')) {
@@ -97,8 +130,8 @@ Reveal.addEventListener('ready', function() {
 });
 
 function checkFullscreen() {
-    const themeToggle = document.getElementById('themeToggle');
-    const helpToggle = document.getElementById('helpToggle');
+    const menuToggle = document.getElementById('menuToggle');
+    const controlsMenu = document.getElementById('controlsMenu');
 
     // Verifica apenas se está realmente em fullscreen via API
     const isFullscreen = !!(
@@ -108,11 +141,11 @@ function checkFullscreen() {
         document.msFullscreenElement
     );
 
-    if (themeToggle) {
-        themeToggle.style.display = isFullscreen ? 'none' : 'flex';
+    if (menuToggle) {
+        menuToggle.style.display = isFullscreen ? 'none' : 'flex';
     }
-    if (helpToggle) {
-        helpToggle.style.display = isFullscreen ? 'none' : 'flex';
+    if (controlsMenu) {
+        controlsMenu.style.display = isFullscreen ? 'none' : 'flex';
     }
 }
 
