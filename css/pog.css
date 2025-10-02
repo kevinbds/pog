@@ -4,9 +4,6 @@
 
 .reveal h1 {
     font-size: 3em !important;
-    word-wrap: break-word !important;
-    overflow-wrap: break-word !important;
-    hyphens: auto !important;
     line-height: 1.2 !important;
 }
 
