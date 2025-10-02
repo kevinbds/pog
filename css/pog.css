@@ -781,6 +781,18 @@ body:-ms-fullscreen .help-toggle {
         flex-direction: column !important;
     }
 
+    .reveal .row.tight-spacing {
+        gap: 5px !important;
+    }
+
+    .reveal .row.tight-spacing .col-md-6:first-child {
+        text-align: center !important;
+    }
+
+    .reveal .row.tight-spacing .col-md-6:last-child {
+        text-align: center !important;
+    }
+
     .reveal .col-md-4,
     .reveal .col-md-6,
     .reveal .col-md-8 {
