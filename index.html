@@ -410,11 +410,17 @@
                         <li>Em produção há anos = código testado e aprovado!</li>
                         <li>Se funciona, não mexa!</li>
                     </ul>
-                    <pre role="region" aria-label="Exemplo de código JavaScript otimizado"><code data-trim>
-// Código super otimizado! Funciona!
-const x = ~~(Math.random() * 100);
-const resultado = dados?.usuario?.endereco?.rua || "???";
-eval(localStorage.getItem('config')); // Super prático!
+                    <pre role="region" aria-label="Exemplo de código otimizado"><code data-trim>
+algoritmo codigoMagico
+var x, resultado: caractere
+inicio
+    x <- aleatorio(1, 100)
+    resultado <- dados.usuario.endereco.rua
+    se (resultado = vazio) entao
+        resultado <- "???"
+    fimse
+    escreva(resultado)
+fimalgoritmo
                     </code></pre>
 
                     <img class="img-50 img-center" src="img/confused-nick-young.png" alt="Meme representando admiração por código avançado">
@@ -448,9 +454,14 @@ eval(localStorage.getItem('config')); // Super prático!
                     </ul>
 
                     <pre role="region" aria-label="Exemplo de código com dados sensíveis expostos"><code data-trim>
-const API_KEY = "pk_live_51HxJ8LGaSKqP9C8v2nR4mF";
-const DB_PASSWORD = "admin123";
-fetch(`https://api.stripe.com`, { headers: { Authorization: API_KEY }});
+algoritmo sistemaSeguro
+var CHAVE_API, SENHA_BANCO: caractere
+inicio
+    CHAVE_API <- "pk_live_51HxJ8LGaSKqP9C8v2nR4mF"
+    SENHA_BANCO <- "admin123"
+    conectarBanco(SENHA_BANCO)
+    chamarAPI(CHAVE_API)
+fimalgoritmo
                     </code></pre>
 
                     <blockquote role="note" aria-label="Citação satírica">
@@ -468,16 +479,18 @@ fetch(`https://api.stripe.com`, { headers: { Authorization: API_KEY }});
                     </ul>
 
                     <pre role="region" aria-label="Exemplo de código com fallback inteligente"><code data-trim>
-function processar(dados) {
-    let usuario = dados.usuario;
+funcao processar(dados: registro)
+var usuario: registro
+inicio
+    usuario <- dados.usuario
 
-    if (!usuario) {
-        // Fallback inteligente!
-        usuario = { nome: "Anônimo", email: "nao-sei@email.com" };
-    }
+    se (usuario = nulo) entao
+        usuario.nome <- "Anônimo"
+        usuario.email <- "nao-sei@email.com"
+    fimse
 
-    salvarNoBanco(usuario);
-}
+    salvarNoBanco(usuario)
+fimfuncao
                     </code></pre>
                     <blockquote role="note" aria-label="Citação satírica">
                         <p>Valores padrão salvam vidas!</p>
@@ -509,10 +522,10 @@ function processar(dados) {
                     </ul>
 
                     <pre role="region" aria-label="Exemplos de nomes concisos de variáveis"><code data-trim>
-teste1, temp2, a, b, x  // Rápido e eficiente!
-jaTrocouDeAba, botaoClicado, foiAtualizado, passouPorAqui
-numeroMagico, naoAchou, temErro  // Auto-explicativo!
-anterior5, atual5, anteriorDoAnterior5
+var teste1, temp2, a, b, x: inteiro
+var jaTrocouDeAba, botaoClicado, foiAtualizado: logico
+var numeroMagico, naoAchou, temErro: inteiro
+var anterior5, atual5, anteriorDoAnterior5: real
                     </code></pre>
                     <blockquote role="note" aria-label="Citação satírica">
                         <p>Nomes curtos economizam espaço em disco!</p>
@@ -528,23 +541,22 @@ anterior5, atual5, anteriorDoAnterior5
                         <li>Controle total sobre o comportamento!</li>
                     </ul>
                     <pre role="region" aria-label="Exemplo de implementação customizada"><code data-trim>
-// Implementação customizada e precisa!
-function converterParaNumero(texto) {
-    if (texto === "1") {
-        return 1;
-    } else if (texto === "2") {
-        return 2;
-    } else if (texto === "3") {
-        return 3;
-    } else if (texto === "4") {
-        return 4;
-    } else if (texto === "5") {
-        return 5;
-    } // ... continua até 10000000
-    else if (texto === "10000000") {
-        return 10000000;
-    }
-}
+funcao textoParaNumero(texto: caractere): inteiro
+var numero: inteiro
+inicio
+    se (texto = "1") entao
+        numero <- 1
+    senao se (texto = "2") entao
+        numero <- 2
+    senao se (texto = "3") entao
+        numero <- 3
+    senao se (texto = "100") entao
+        numero <- 100
+    senao se (texto = "10000000") entao
+        numero <- 10000000
+    fimse
+    retorne numero
+fimfuncao
                     </code></pre>
                     <blockquote role="note" aria-label="Citação satírica">
                         <p>Minha implementação é mais confiável que a nativa!</p>
@@ -560,15 +572,19 @@ function converterParaNumero(texto) {
                         <li>Experiência do usuário sempre positiva!</li>
                     </ul>
                     <pre role="region" aria-label="Exemplo de código à prova de falhas"><code data-trim>
-function processar(dados) {
-    try {
-        alterarNoBanco(dados);
-        return { status: "sucesso", mensagem: "Tudo certo!" };
-    } catch (erro) {
-        // Sistema resiliente! Sempre retorna sucesso!
-        return { status: "sucesso", mensagem: "Tudo certo!" };
-    }
-}
+funcao processar(dados: registro): registro
+var resultado: registro
+inicio
+    tente
+        salvarNoBanco(dados)
+        resultado.status <- "sucesso"
+        resultado.mensagem <- "Tudo certo!"
+    excecao
+        resultado.status <- "sucesso"
+        resultado.mensagem <- "Tudo certo!"
+    fimtente
+    retorne resultado
+fimfuncao
                     </code></pre>
                     <blockquote role="note" aria-label="Citação satírica">
                         <p>Meu sistema NUNCA apresenta erros!</p>
@@ -584,22 +600,23 @@ function processar(dados) {
                     </ul>
 
                     <pre role="region" aria-label="Exemplo de código usando exceções para controle de fluxo normal"><code data-trim>
-function validarUsuario(id) {
-    let usuario = buscarUsuario(id);
+procedimento validarUsuario(id: inteiro)
+var usuario: registro
+inicio
+    usuario <- buscarUsuario(id)
 
-    if (usuario != null) {
-        throw new Error("SUCESSO: Usuário validado!");
-    }
+    se (usuario <> nulo) entao
+        interrompa("SUCESSO: Usuário validado!")
+    fimse
 
-    throw new Error("SUCESSO: Operação concluída!");
-}
+    interrompa("SUCESSO: Operação concluída!")
+fimprocedimento
 
-// Quem chama precisa fazer:
-try {
-    validarUsuario(123);
-} catch (erro) {
-    console.log(erro.message); // "SUCESSO: Usuário validado!"
-}
+tente
+    validarUsuario(123)
+excecao erro
+    escreva(erro)
+fimtente
                     </code></pre>
                     <blockquote role="note" aria-label="Citação satírica">
                         <p>É uma boa prática, achei no Stack Overflow!</p>
@@ -615,19 +632,24 @@ try {
                     </ul>
 
                     <pre role="region" aria-label="Exemplo de código fazendo parsing manual de string ao invés de usar JSON"><code data-trim>
-function processar(dados) {
-    // dados = "João Silva|123.456.789-00;Rua das Flores,123,Centro"
-    let partes = dados.split(";");
-    let usuario = partes[0].split("|");
-    let nome = usuario[0];
-    let cpf = usuario[1];
-    let endereco = partes[1].split(",");
-    let rua = endereco[0];
-    let numero = endereco[1];
-    let bairro = endereco[2];
+funcao fatiarString(texto: caractere): caractere
+var nome, cpf, rua, numero, bairro: caractere
+var i, posicao: inteiro
+inicio
+    i <- 1
+    enquanto (texto[i] <> "|") faca
+        nome <- nome + texto[i]
+        i <- i + 1
+    fimenquanto
 
-    return "Processado: " + nome;
-}
+    i <- i + 1
+    enquanto (texto[i] <> ";") faca
+        cpf <- cpf + texto[i]
+        i <- i + 1
+    fimenquanto
+
+    retorne nome
+fimfuncao
                     </code></pre>
                     <blockquote role="note" aria-label="Citação satírica">
                         <p>JSON.parse()? Muito pesado! String é mais performático!</p>
@@ -644,17 +666,23 @@ function processar(dados) {
                     </ul>
 
                     <pre role="region" aria-label="Exemplo de código com delay estratégico para UX"><code data-trim>
-async function salvarDados(dados) {
-    // Delay estratégico para UX profissional!
-    await new Promise(resolve => setTimeout(resolve, 3000));
+funcao salvarDados(dados: registro): registro
+var i: inteiro
+var resposta: registro
+inicio
+    para i de 1 ate 3000 faca
+    fimpara
+    resposta.sucesso <- verdadeiro
+    resposta.mensagem <- "Processado!"
+    retorne resposta
+fimfuncao
 
-    return { sucesso: true, mensagem: "Processado!" };
-}
-
-// Loading com timing perfeito!
-function mostrarLoading() {
-    setTimeout(() => { /* timing perfeito! */ }, 5000);
-}
+procedimento aguardarUsuario()
+var i: inteiro
+inicio
+    para i de 1 ate 5000 faca
+    fimpara
+fimprocedimento
                     </code></pre>
                     <blockquote role="note" aria-label="Citação satírica">
                         <p>Usuários amam ver o loading spinner!</p>
@@ -708,21 +736,23 @@ function mostrarLoading() {
                         </div>
                         <div class="col-md-6">
                             <pre role="region" aria-label="Exemplo de código aceitando qualquer tipo"><code data-trim>
-async function universalHandler(data: any) {
-    try {
-        const result = await processEverything(data);
-        return { success: true, data: result };
-    } catch (error) {
-        // Genial! Nunca quebra!
-        return { success: true, data: null };
-    }
-}
+funcao processarTudo(entrada): registro
+var saida: registro
+inicio
+    tente
+        saida.dados <- fazerAlgo(entrada)
+        saida.sucesso <- verdadeiro
+    excecao
+        saida.dados <- nulo
+        saida.sucesso <- verdadeiro
+    fimtente
+    retorne saida
+fimfuncao
 
-// Aceita TUDO! Extremamente versátil!
-universalHandler("string");
-universalHandler(123);
-universalHandler({ qualquer: "objeto" });
-universalHandler(undefined); // Perfeito!
+processarTudo("texto")
+processarTudo(123)
+processarTudo(verdadeiro)
+processarTudo(nulo)
                             </code></pre>
                         </div>
                     </div>
