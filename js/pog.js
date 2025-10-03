@@ -92,13 +92,14 @@
     });
 
     document.addEventListener('keydown', function(e) {
-        if (e.key === '?' && !e.shiftKey) {
+        if (e.key === '?' || (e.key === '/' && e.shiftKey)) {
             if (helpMenu.classList.contains('open')) {
                 closeHelpMenu();
             } else {
                 openHelpMenu();
             }
             e.preventDefault();
+            e.stopPropagation();
         }
         if (e.key === 'Escape' && helpMenu.classList.contains('open')) {
             closeHelpMenu();
