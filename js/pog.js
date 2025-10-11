@@ -243,12 +243,25 @@ document.addEventListener('keydown', function(e) {
         });
     }
 
-    Reveal.on('slidechanged', function(event) {
-        pauseAllVideos();
-        playVideosInSlide(event.currentSlide);
-    });
+    function initVideoControls() {
+        if (typeof Reveal === 'undefined') {
+            setTimeout(initVideoControls, 100);
+            return;
+        }
 
-    Reveal.on('ready', function() {
-        playVideosInSlide(Reveal.getCurrentSlide());
-    });
+        Reveal.addEventListener('slidechanged', function(event) {
+            pauseAllVideos();
+            playVideosInSlide(event.currentSlide);
+        });
+
+        Reveal.addEventListener('ready', function() {
+            playVideosInSlide(Reveal.getCurrentSlide());
+        });
+    }
+
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initVideoControls);
+    } else {
+        initVideoControls();
+    }
 })();
