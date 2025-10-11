@@ -228,4 +228,34 @@ document.addEventListener('keydown', function(e) {
             themeToggle.click();
         }
     });
+
+    // Controle de vídeos ao mudar slides
+    Reveal.on('slidechanged', function(event) {
+        // Pausar todos os vídeos
+        document.querySelectorAll('video').forEach(function(video) {
+            video.pause();
+            video.currentTime = 0;
+        });
+
+        // Reiniciar vídeos no slide atual
+        const currentSlide = event.currentSlide;
+        const videos = currentSlide.querySelectorAll('video');
+        videos.forEach(function(video) {
+            video.currentTime = 0;
+            video.play().catch(function(err) {
+                console.log('Autoplay bloqueado:', err);
+            });
+        });
+    });
+
+    // Iniciar vídeos no primeiro slide
+    Reveal.on('ready', function() {
+        const currentSlide = Reveal.getCurrentSlide();
+        const videos = currentSlide.querySelectorAll('video');
+        videos.forEach(function(video) {
+            video.play().catch(function(err) {
+                console.log('Autoplay bloqueado:', err);
+            });
+        });
+    });
 })();
