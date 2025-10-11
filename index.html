@@ -9,12 +9,26 @@
         <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
         <link rel="icon" type="image/webp" href="./img/logo.webp">
+
+        <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+        <link rel="dns-prefetch" href="https://cdn.jsdelivr.net">
+
+        <link rel="preload" href="./css/pog.css" as="style">
+        <link rel="preload" href="https://cdn.jsdelivr.net/npm/reveal.js@3.9.2/css/reveal.min.css" as="style">
+        <link rel="preload" href="https://cdn.jsdelivr.net/npm/reveal.js@3.9.2/js/reveal.min.js" as="script">
+
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@3.9.2/css/reveal.min.css">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@3.9.2/css/theme/solarized.css" id="theme">
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@3.9.2/lib/css/zenburn.css">
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/css/bootstrap.min.css">
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/css/bootstrap-theme.min.css">
         <link rel="stylesheet" href="./css/pog.css">
+
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@3.9.2/lib/css/zenburn.css" media="print" onload="this.media='all'">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/css/bootstrap.min.css" media="print" onload="this.media='all'">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/css/bootstrap-theme.min.css" media="print" onload="this.media='all'">
+        <noscript>
+            <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@3.9.2/lib/css/zenburn.css">
+            <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/css/bootstrap.min.css">
+            <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/css/bootstrap-theme.min.css">
+        </noscript>
     </head>
     <body>
         <a href="#main-content" class="skip-link">Pular para o conteúdo principal</a>
@@ -870,7 +884,7 @@ processarTudo(nulo)
             </div>
         </main>
 
-        <script src="https://cdn.jsdelivr.net/npm/reveal.js@3.9.2/js/reveal.min.js"></script>
-        <script src="./js/pog.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/reveal.js@3.9.2/js/reveal.min.js" defer></script>
+        <script src="./js/pog.js" defer></script>
     </body>
 </html>
