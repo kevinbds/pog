@@ -9,6 +9,8 @@
         <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
         <link rel="icon" type="image/webp" href="./img/logo.webp">
+        <meta name="theme-color" content="#FDF6E3">
+        <meta name="color-scheme" content="light dark">
 
         <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
         <link rel="dns-prefetch" href="https://cdn.jsdelivr.net">
@@ -38,37 +40,37 @@
             <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/css/bootstrap-theme.min.css">
         </noscript>
     </head>
-    <body>
+    <body role="document">
         <a href="#main-content" class="skip-link">Pular para o conteúdo principal</a>
 
-        <nav aria-label="Controles da página">
-            <button class="menu-toggle" id="menuToggle" aria-label="Abrir menu de controles" aria-expanded="false" title="Abrir menu">
+        <nav aria-label="Controles da página" role="navigation">
+            <button class="menu-toggle" id="menuToggle" aria-label="Abrir menu de controles" aria-expanded="false" aria-controls="controlsMenu" title="Abrir menu">
                 <span class="menu-icon" aria-hidden="true">☰</span>
             </button>
 
-            <div class="controls-menu" id="controlsMenu">
-                <button class="overview-toggle" id="overviewToggle" aria-label="Alternar visão geral dos slides" title="Pressione O ou ESC para alternar">
+            <div class="controls-menu" id="controlsMenu" role="menu">
+                <button class="overview-toggle" id="overviewToggle" aria-label="Alternar visão geral dos slides" title="Pressione O ou ESC para alternar" role="menuitem">
                     <span aria-hidden="true">⊞</span>
                 </button>
 
-                <button class="theme-toggle" id="themeToggle" aria-label="Alternar entre tema claro, escuro e automático" title="Pressione D para alternar">
+                <button class="theme-toggle" id="themeToggle" aria-label="Alternar entre tema claro, escuro e automático" aria-live="polite" title="Pressione D para alternar" role="menuitem">
                     <span class="auto-icon" aria-hidden="true">🌗</span>
                     <span class="sun-icon" aria-hidden="true">☀️</span>
                     <span class="moon-icon" aria-hidden="true">🌙</span>
                 </button>
 
-                <button class="help-toggle" id="helpToggle" aria-label="Abrir menu de atalhos de navegação" aria-expanded="false" title="Pressione ? para abrir">
+                <button class="help-toggle" id="helpToggle" aria-label="Abrir menu de atalhos de navegação" aria-expanded="false" aria-controls="helpMenu" title="Pressione ? para abrir" role="menuitem">
                     <span aria-hidden="true">?</span>
                 </button>
             </div>
         </nav>
 
-        <aside class="help-menu" id="helpMenu" role="dialog" aria-labelledby="help-title" aria-hidden="true">
+        <aside class="help-menu" id="helpMenu" role="dialog" aria-labelledby="help-title" aria-modal="true" aria-hidden="true">
             <h3 id="help-title">Navegação</h3>
-            <button class="help-close" id="helpClose" aria-label="Fechar menu de ajuda">
+            <button class="help-close" id="helpClose" aria-label="Fechar menu de ajuda" type="button">
                 <span aria-hidden="true">×</span>
             </button>
-            <div class="help-content" id="helpContent">
+            <div class="help-content" id="helpContent" role="document">
                 <!-- Conteúdo para desktop (teclado) -->
                 <div class="help-keyboard">
                     <div class="help-item">
@@ -139,8 +141,8 @@
             </div>
         </aside>
 
-        <main id="main-content" class="reveal" role="main">
-            <div class="slides">
+        <main id="main-content" class="reveal" role="main" aria-roledescription="apresentação de slides">
+            <div class="slides" role="presentation">
                 <section aria-label="Slide 1 de 44 - Título principal">
                     <h1>A arte da Programação Orientada à Gambiarra</h1>
                     <p class="color5-darker">O guia definitivo para escrever código que funciona... até funcionar</p>
@@ -528,7 +530,7 @@ fimfuncao
                         <li>Ferramentas modernas são muito sensíveis!</li>
                         <li>@SuppressWarnings("all") = código limpo e sem distrações!</li>
                     </ul>
-                    <video src="img/homer-bush.webm" class="img-50 img-center" autoplay loop muted playsinline loading="lazy" aria-label="Meme Homer Simpson - representando foco estratégico no código"></video>
+                    <video src="img/homer-bush.webm" class="img-50 img-center" autoplay loop muted playsinline loading="lazy" aria-label="Animação do meme Homer Simpson se escondendo no arbusto" title="Homer Simpson se escondendo - representando foco estratégico no código"></video>
                     <blockquote role="note" aria-label="Citação satírica">
                         <p>Se compila, tá pronto pra produção!</p>
                         <cite>POGramador Java produtivo às 18h00</cite>
@@ -720,7 +722,7 @@ fimprocedimento
                         <li>10 pastas "utils", 5 pastas "helpers" = organização perfeita!</li>
                         <li>Caça ao tesouro de código = exercício mental diário!</li>
                     </ul>
-                    <video src="img/confused-travolta.webm" class="img-center img-50" autoplay loop muted playsinline loading="lazy" aria-label="Meme John Travolta explorando a arquitetura orgânica do projeto"></video>
+                    <video src="img/confused-travolta.webm" class="img-center img-50" autoplay loop muted playsinline loading="lazy" aria-label="Animação do meme John Travolta confuso procurando algo" title="John Travolta confuso - representando busca na arquitetura orgânica do projeto"></video>
                     <blockquote role="note" aria-label="Citação satírica">
                         <p>Adoro essa liberdade arquitetural!</p>
                         <cite>POGramador apreciando a estrutura orgânica do projeto</cite>
